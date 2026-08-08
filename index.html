@@ -1,66 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portafolio profesional de Diana Tibisay Pacheco Moreno, Java Backend Developer y Full Stack Developer." />
-  <title>Diana Pacheco | Java Backend & Full Stack Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Portafolio profesional de Diana Tibisay Pacheco Moreno, Java Backend Developer y Full Stack Developer."
+  >
+
+  <title>
+    Diana Pacheco | Java Backend & Full Stack Developer
+  </title>
+
+
+  <!-- Google Fonts -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- CSS -->
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
 </head>
+
+
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#inicio">DPM<span>.</span></a>
 
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-        ☰
-      </button>
 
-      <nav class="nav-links" aria-label="Navegación principal">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+  <div class="container nav">
+
+
+    <!-- LOGO -->
+
+    <a
+      class="brand"
+      href="#inicio"
+    >
+      DPM<span>.</span>
+    </a>
+
+
+    <!-- MENÚ MÓVIL -->
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+
+    <!-- NAVEGACIÓN -->
+
+    <nav
+      class="nav-links"
+      aria-label="Navegación principal"
+    >
+
+      <a href="#sobre-mi">
+        Sobre mí
+      </a>
+
+      <a href="#habilidades">
+        Habilidades
+      </a>
+
+      <a href="#experiencia">
+        Experiencia
+      </a>
+
+      <a href="#proyectos">
+        Proyectos
+      </a>
+
+      <a href="#contacto">
+        Contacto
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO / INICIO
+===================================================== -->
+
+<section
+  id="inicio"
+  class="hero section"
+>
+
+  <div class="container hero-grid">
+
+
+    <!-- TEXTO -->
+
+    <div>
+
+      <p class="eyebrow">
+        Hola, soy
+      </p>
+
+
+      <h1>
+        Diana Tibisay
+        <br>
+        Pacheco Moreno
+      </h1>
+
+
+      <h2>
+        Java Backend Developer
+        <span>
+          | Full Stack Developer
+        </span>
+      </h2>
+
+
+      <p class="hero-copy">
+
+        Desarrollo aplicaciones web, APIs REST y soluciones
+        empresariales con Java, Spring Boot, Angular,
+        React y TypeScript.
+
+      </p>
+
+
+      <!-- BOTONES HERO -->
+
+      <div class="hero-actions">
+
+        <a
+          class="btn btn-primary"
+          href="#proyectos"
+        >
+          Ver proyectos
+        </a>
+
+
+        <a
+          class="btn btn-secondary"
+          href="assets/docs/CV_Diana_Pacheco.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Ver CV
+        </a>
+
+      </div>
+
+
+      <!-- REDES -->
+
+      <div class="social-links">
+
+        <a
+          href="https://github.com/BREINHZ"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+
+        <!-- Reemplaza # por tu LinkedIn -->
+
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener"
+        >
+          LinkedIn
+        </a>
+
+      </div>
+
     </div>
-  </header>
 
-  <main>
-    <section id="inicio" class="hero section">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Hola, soy</p>
-          <h1>Diana Tibisay<br />Pacheco Moreno</h1>
-          <h2>Java Backend Developer <span>| Full Stack Developer</span></h2>
 
-          <p class="hero-copy">
-            Desarrollo aplicaciones web, APIs REST y soluciones empresariales con
-            Java, Spring Boot, Angular, React y TypeScript.
-          </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#proyectos">Ver proyectos</a>
-            <a class="btn btn-secondary" href="assets/docs/CV_Diana_Pacheco.pdf" target="_blank" rel="noopener">
-              Ver CV
-            </a>
-          </div>
+    <!-- TARJETA DE CÓDIGO -->
 
-          <div class="social-links">
-            <a href="https://github.com/BREINHZ" target="_blank" rel="noopener">GitHub</a>
-            <!-- Reemplaza # por la URL real de tu LinkedIn -->
-            <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
+    <div
+      class="hero-card"
+      aria-label="Resumen profesional"
+    >
 
-        <div class="hero-card" aria-label="Resumen profesional">
-          <div class="terminal-dot-row">
-            <span></span><span></span><span></span>
-          </div>
-          <pre><code><span class="code-keyword">const</span> developer = {
+      <div class="terminal-dot-row">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+
+      <pre><code><span class="code-keyword">const</span> developer = {
   name: <span class="code-string">"Diana Pacheco"</span>,
   focus: <span class="code-string">"Java Backend"</span>,
   stack: [
@@ -71,242 +244,928 @@
   ],
   mindset: <span class="code-string">"Aprendizaje continuo"</span>
 };</code></pre>
-        </div>
-      </div>
-    </section>
 
-    <section id="sobre-mi" class="section section-alt">
-      <div class="container narrow">
-        <p class="section-label">Perfil</p>
-        <h2 class="section-title">Sobre mí</h2>
-
-        <div class="about-card">
-          <p>
-            Soy desarrolladora de software con experiencia en el desarrollo de
-            aplicaciones web y móviles, con enfoque en <strong>Java Backend</strong>
-            y desarrollo <strong>Full Stack</strong>. He trabajado con Java,
-            Spring Boot, JavaScript, TypeScript, React, Angular y Python,
-            construyendo soluciones orientadas a necesidades reales de negocio.
-          </p>
-
-          <p>
-            Tengo experiencia desarrollando APIs REST, integraciones entre
-            sistemas, microservicios y funcionalidades frontend, además del manejo
-            de bases de datos como PostgreSQL, MySQL y MongoDB. También he
-            trabajado con pruebas unitarias y funcionales, Git, GitHub, GitLab,
-            Postman y entornos dockerizados.
-          </p>
-
-          <p>
-            Me caracterizo por el análisis crítico, la proactividad, la
-            adaptación a equipos ágiles y el aprendizaje continuo. Mi objetivo
-            es seguir creciendo como desarrolladora y aportar soluciones de
-            software mantenibles, escalables y orientadas a resultados.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="habilidades" class="section">
-      <div class="container">
-        <p class="section-label">Stack tecnológico</p>
-        <h2 class="section-title">Habilidades</h2>
-
-        <div class="skills-grid">
-          <article class="skill-card">
-            <h3>Backend</h3>
-            <div class="tags">
-              <span>Java</span>
-              <span>Spring Boot</span>
-              <span>APIs REST</span>
-              <span>Microservicios</span>
-              <span>Python</span>
-              <span>JUnit</span>
-              <span>Mockito</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <h3>Frontend</h3>
-            <div class="tags">
-              <span>React</span>
-              <span>Angular</span>
-              <span>TypeScript</span>
-              <span>JavaScript</span>
-              <span>HTML5</span>
-              <span>CSS3</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <h3>Bases de datos</h3>
-            <div class="tags">
-              <span>PostgreSQL</span>
-              <span>MySQL</span>
-              <span>MongoDB</span>
-              <span>DBeaver</span>
-            </div>
-          </article>
-
-          <article class="skill-card">
-            <h3>Herramientas</h3>
-            <div class="tags">
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>GitLab</span>
-              <span>Docker</span>
-              <span>Postman</span>
-              <span>AWS</span>
-              <span>Scrum</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experiencia" class="section section-alt">
-      <div class="container">
-        <p class="section-label">Trayectoria</p>
-        <h2 class="section-title">Experiencia</h2>
-
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-heading">
-                <div>
-                  <h3>Desarrolladora de Software Freelance</h3>
-                  <p>Desarrollo Full Stack</p>
-                </div>
-                <span>Sep 2023 — Mar 2026</span>
-              </div>
-              <ul>
-                <li>Levantamiento y análisis de requerimientos con clientes.</li>
-                <li>Desarrollo de aplicaciones web y móviles con Angular, React Native y Java/Spring Boot.</li>
-                <li>Diseño e implementación de APIs REST e integraciones entre sistemas.</li>
-                <li>Administración de PostgreSQL, MySQL y MongoDB.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <div class="timeline-heading">
-                <div>
-                  <h3>WOG S.A.S.</h3>
-                  <p>Java Junior Backend / Angular Frontend</p>
-                </div>
-                <span>Jun 2025 — Dic 2025</span>
-              </div>
-              <ul>
-                <li>Implementación de funcionalidades frontend con React, Angular y TypeScript.</li>
-                <li>Creación y mantenimiento de microservicios con Java y Spring Boot.</li>
-                <li>Corrección de bugs para mejorar la estabilidad del sistema.</li>
-                <li>Pruebas con JUnit, Jest, Mockito y Postman.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proyectos" class="section">
-      <div class="container">
-        <p class="section-label">Trabajo destacado</p>
-        <h2 class="section-title">Proyectos</h2>
-
-        <article class="project-card">
-          <div class="project-image">
-            <!-- Reemplaza placeholder-proyecto.svg por uno de tus pantallazos -->
-            <img src="assets/images/placeholder-proyecto.svg" alt="Vista previa del Sistema de Gestión de Notas">
-          </div>
-
-          <div class="project-content">
-            <div class="project-heading">
-              <div>
-                <p class="project-type">Proyecto Full Stack</p>
-                <h3>Sistema de Gestión de Notas</h3>
-              </div>
-              <span class="status">Destacado</span>
-            </div>
-
-            <p>
-              Aplicación web para gestionar alumnos, materias y notas.
-              La solución separa frontend y backend y se comunica mediante
-              servicios REST.
-            </p>
-
-            <div class="project-section">
-              <h4>Funcionalidades</h4>
-              <ul>
-                <li>Registro de alumnos y materias.</li>
-                <li>Registro de notas asociadas a un alumno y una materia.</li>
-                <li>Consulta de notas por alumno.</li>
-                <li>Validación de notas entre 1 y 5.</li>
-                <li>Interfaz responsiva para la gestión de información.</li>
-              </ul>
-            </div>
-
-            <div class="tags">
-              <span>Java 17</span>
-              <span>Spring Boot</span>
-              <span>Spring Data JPA</span>
-              <span>PostgreSQL</span>
-              <span>React</span>
-              <span>TypeScript</span>
-              <span>Axios</span>
-              <span>Docker</span>
-            </div>
-
-            <div class="architecture">
-              <span>React + TypeScript</span>
-              <strong>→</strong>
-              <span>API REST</span>
-              <strong>→</strong>
-              <span>Spring Boot</span>
-              <strong>→</strong>
-              <span>PostgreSQL</span>
-            </div>
-
-            <div class="project-links">
-              <a class="btn btn-primary" href="https://github.com/BREINHZ/frontend_diana_pacheco" target="_blank" rel="noopener">
-                Frontend
-              </a>
-              <a class="btn btn-secondary" href="https://github.com/BREINHZ/backend_diana_pacheco" target="_blank" rel="noopener">
-                Backend
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="contacto" class="section section-alt">
-      <div class="container narrow contact">
-        <p class="section-label">Hablemos</p>
-        <h2 class="section-title">Contacto</h2>
-        <p>
-          Estoy abierta a oportunidades donde pueda aportar como Java Backend
-          Developer o Full Stack Developer y seguir fortaleciendo mi experiencia
-          en soluciones de software.
-        </p>
-
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="mailto:dianistt890403@gmail.com">Enviar correo</a>
-          <a class="btn btn-secondary" href="https://github.com/BREINHZ" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Diana Tibisay Pacheco Moreno</p>
-      <p>Construido con HTML, CSS y JavaScript.</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOBRE MÍ
+===================================================== -->
+
+<section
+  id="sobre-mi"
+  class="section section-alt"
+>
+
+  <div class="container narrow">
+
+
+    <p class="section-label">
+      Perfil
+    </p>
+
+
+    <h2 class="section-title">
+      Sobre mí
+    </h2>
+
+
+    <div class="about-card">
+
+
+      <p>
+
+        Soy desarrolladora de software con experiencia en el
+        desarrollo de aplicaciones web y móviles, con enfoque
+        en <strong>Java Backend</strong> y desarrollo
+        <strong>Full Stack</strong>.
+
+        He trabajado con Java, Spring Boot, JavaScript,
+        TypeScript, React, Angular y Python, construyendo
+        soluciones orientadas a necesidades reales de negocio.
+
+      </p>
+
+
+      <p>
+
+        Tengo experiencia desarrollando APIs REST,
+        integraciones entre sistemas, microservicios
+        y funcionalidades frontend, además del manejo
+        de bases de datos como PostgreSQL, MySQL y MongoDB.
+
+        También he trabajado con pruebas unitarias y
+        funcionales, Git, GitHub, GitLab, Postman
+        y entornos dockerizados.
+
+      </p>
+
+
+      <p>
+
+        Me caracterizo por el análisis crítico, la proactividad,
+        la adaptación a equipos ágiles y el aprendizaje continuo.
+
+        Mi objetivo es seguir creciendo como desarrolladora
+        y aportar soluciones de software mantenibles,
+        escalables y orientadas a resultados.
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HABILIDADES
+===================================================== -->
+
+<section
+  id="habilidades"
+  class="section"
+>
+
+  <div class="container">
+
+
+    <p class="section-label">
+      Stack tecnológico
+    </p>
+
+
+    <h2 class="section-title">
+      Habilidades
+    </h2>
+
+
+    <div class="skills-grid">
+
+
+      <!-- BACKEND -->
+
+      <article class="skill-card">
+
+        <h3>
+          Backend
+        </h3>
+
+        <div class="tags">
+
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>APIs REST</span>
+          <span>Microservicios</span>
+          <span>Python</span>
+          <span>JUnit</span>
+          <span>Mockito</span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- FRONTEND -->
+
+      <article class="skill-card">
+
+        <h3>
+          Frontend
+        </h3>
+
+        <div class="tags">
+
+          <span>React</span>
+          <span>Angular</span>
+          <span>React Native</span>
+          <span>TypeScript</span>
+          <span>JavaScript</span>
+          <span>HTML5</span>
+          <span>CSS3</span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- BASES DE DATOS -->
+
+      <article class="skill-card">
+
+        <h3>
+          Bases de datos
+        </h3>
+
+        <div class="tags">
+
+          <span>PostgreSQL</span>
+          <span>MySQL</span>
+          <span>MongoDB</span>
+          <span>DBeaver</span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- HERRAMIENTAS -->
+
+      <article class="skill-card">
+
+        <h3>
+          Herramientas
+        </h3>
+
+        <div class="tags">
+
+          <span>Git</span>
+          <span>GitHub</span>
+          <span>GitLab</span>
+          <span>Docker</span>
+          <span>Postman</span>
+          <span>AWS</span>
+          <span>Scrum</span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCIA
+===================================================== -->
+
+<section
+  id="experiencia"
+  class="section section-alt"
+>
+
+  <div class="container">
+
+
+    <p class="section-label">
+      Trayectoria
+    </p>
+
+
+    <h2 class="section-title">
+      Experiencia
+    </h2>
+
+
+    <div class="timeline">
+
+
+      <!-- FREELANCE -->
+
+      <article class="timeline-item">
+
+        <div class="timeline-marker"></div>
+
+
+        <div class="timeline-content">
+
+
+          <div class="timeline-heading">
+
+            <div>
+
+              <h3>
+                Desarrolladora de Software Freelance
+              </h3>
+
+              <p>
+                Desarrollo Full Stack
+              </p>
+
+            </div>
+
+
+            <span>
+              Sep 2023 — Mar 2026
+            </span>
+
+          </div>
+
+
+          <ul>
+
+            <li>
+              Levantamiento y análisis de requerimientos
+              con clientes.
+            </li>
+
+            <li>
+              Desarrollo de aplicaciones web y móviles
+              con Angular, React Native y Java/Spring Boot.
+            </li>
+
+            <li>
+              Diseño e implementación de APIs REST
+              e integraciones entre sistemas.
+            </li>
+
+            <li>
+              Administración de PostgreSQL,
+              MySQL y MongoDB.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- WOG -->
+
+      <article class="timeline-item">
+
+        <div class="timeline-marker"></div>
+
+
+        <div class="timeline-content">
+
+
+          <div class="timeline-heading">
+
+            <div>
+
+              <h3>
+                WOG S.A.S.
+              </h3>
+
+              <p>
+                Java Junior Backend / Angular Frontend
+              </p>
+
+            </div>
+
+
+            <span>
+              Jun 2025 — Dic 2025
+            </span>
+
+          </div>
+
+
+          <ul>
+
+            <li>
+              Implementación de funcionalidades frontend
+              con React, Angular y TypeScript.
+            </li>
+
+            <li>
+              Creación y mantenimiento de microservicios
+              con Java y Spring Boot.
+            </li>
+
+            <li>
+              Corrección de bugs para mejorar la
+              estabilidad del sistema.
+            </li>
+
+            <li>
+              Pruebas con JUnit, Jest,
+              Mockito y Postman.
+            </li>
+
+          </ul>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROYECTOS
+===================================================== -->
+
+<section
+  id="proyectos"
+  class="section"
+>
+
+  <div class="container">
+
+
+    <p class="section-label">
+      Portafolio
+    </p>
+
+
+    <h2 class="section-title">
+      Proyectos destacados
+    </h2>
+
+
+    <p class="projects-intro">
+
+      Algunos proyectos en los que he trabajado utilizando
+      desarrollo Full Stack, Backend Java y aplicaciones móviles.
+
+    </p>
+
+
+
+    <!-- =================================================
+         CARRUSEL
+    ================================================== -->
+
+    <div class="projects-carousel">
+
+
+      <!-- FLECHA ANTERIOR -->
+
+      <button
+        class="carousel-btn carousel-prev"
+        type="button"
+        aria-label="Proyecto anterior"
+      >
+        ‹
+      </button>
+
+
+
+      <!-- VENTANA DEL CARRUSEL -->
+
+      <div class="projects-track-wrapper">
+
+
+        <!-- IMPORTANTE:
+             LOS DOS PROYECTOS ESTÁN DENTRO
+             DEL MISMO projects-track
+        -->
+
+        <div class="projects-track">
+
+
+
+          <!-- ============================================
+               PROYECTO 01
+               SISTEMA DE GESTIÓN DE NOTAS
+          ============================================= -->
+
+          <article class="project-slide">
+
+
+            <!-- IMAGEN -->
+
+            <div class="project-visual">
+
+              <img
+                src="assets/images/placeholder-proyecto.svg"
+                alt="Sistema de Gestión de Notas"
+              >
+
+
+              <span class="project-badge">
+                Full Stack
+              </span>
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="project-info">
+
+
+              <p class="project-number">
+                Proyecto 01
+              </p>
+
+
+              <h3>
+                Sistema de Gestión de Notas
+              </h3>
+
+
+              <p class="project-description">
+
+                Aplicación web para gestionar alumnos,
+                materias y notas mediante una arquitectura
+                separada entre frontend y backend,
+                comunicados mediante una API REST.
+
+              </p>
+
+
+
+              <!-- TECNOLOGÍAS -->
+
+              <div class="tags">
+
+                <span>Java 17</span>
+
+                <span>Spring Boot</span>
+
+                <span>Spring Data JPA</span>
+
+                <span>PostgreSQL</span>
+
+                <span>React</span>
+
+                <span>TypeScript</span>
+
+                <span>Axios</span>
+
+                <span>Docker</span>
+
+              </div>
+
+
+
+              <!-- FUNCIONALIDADES -->
+
+              <div class="project-mini-features">
+
+                <span>
+                  ✓ Gestión de alumnos
+                </span>
+
+                <span>
+                  ✓ Gestión de materias
+                </span>
+
+                <span>
+                  ✓ Registro de notas
+                </span>
+
+                <span>
+                  ✓ API REST
+                </span>
+
+              </div>
+
+
+
+              <!-- ARQUITECTURA -->
+
+              <div class="project-architecture">
+
+                <span>
+                  React
+                </span>
+
+                <strong>
+                  →
+                </strong>
+
+                <span>
+                  REST API
+                </span>
+
+                <strong>
+                  →
+                </strong>
+
+                <span>
+                  Spring Boot
+                </span>
+
+                <strong>
+                  →
+                </strong>
+
+                <span>
+                  PostgreSQL
+                </span>
+
+              </div>
+
+
+
+              <!-- ENLACES -->
+
+              <div class="project-actions">
+
+
+                <a
+                  class="btn btn-primary"
+                  href="https://github.com/BREINHZ/frontend_diana_pacheco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver Frontend
+                </a>
+
+
+                <a
+                  class="btn btn-secondary"
+                  href="https://github.com/BREINHZ/backend_diana_pacheco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver Backend
+                </a>
+
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ============================================
+               PROYECTO 02
+               FUNCTIONAL TRAINING
+          ============================================= -->
+
+          <article class="project-slide">
+
+
+            <!-- IMAGEN -->
+
+            <div class="project-visual">
+
+              <img
+                src="assets/images/functional-training.png"
+                alt="Aplicación móvil Functional Training"
+              >
+
+
+              <span class="project-badge">
+                Mobile
+              </span>
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN -->
+
+            <div class="project-info">
+
+
+              <p class="project-number">
+                Proyecto 02
+              </p>
+
+
+              <h3>
+                Functional Training
+              </h3>
+
+
+              <p class="project-description">
+
+                Aplicación móvil orientada al entrenamiento
+                funcional, desarrollada para gestionar usuarios
+                y facilitar el acceso a rutinas, ejercicios,
+                valoración física, planes de entrenamiento
+                y recomendaciones de alimentación.
+
+              </p>
+
+
+
+              <!-- TECNOLOGÍAS -->
+
+              <div class="tags">
+
+                <span>
+                  React Native
+                </span>
+
+                <span>
+                  Android
+                </span>
+
+                <span>
+                  JavaScript
+                </span>
+
+                <span>
+                  API REST
+                </span>
+
+                <span>
+                  Git
+                </span>
+
+                <span>
+                  GitHub
+                </span>
+
+              </div>
+
+
+
+              <!-- FUNCIONALIDADES -->
+
+              <div class="project-mini-features">
+
+                <span>
+                  ✓ Login
+                </span>
+
+                <span>
+                  ✓ Registro
+                </span>
+
+                <span>
+                  ✓ Rutinas
+                </span>
+
+                <span>
+                  ✓ Entrenamiento
+                </span>
+
+                <span>
+                  ✓ Ejercicios
+                </span>
+
+                <span>
+                  ✓ Alimentación
+                </span>
+
+              </div>
+
+
+
+              <!-- ARQUITECTURA -->
+
+              <div class="project-architecture">
+
+                <span>
+                  React Native
+                </span>
+
+                <strong>
+                  →
+                </strong>
+
+                <span>
+                  API REST
+                </span>
+
+                <strong>
+                  →
+                </strong>
+
+                <span>
+                  Backend
+                </span>
+
+              </div>
+
+
+
+              <!-- ENLACES -->
+
+              <div class="project-actions">
+
+
+                <a
+                  class="btn btn-primary"
+                  href="https://github.com/BREINHZ/Project-React-Native"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver Frontend
+                </a>
+
+
+                <a
+                  class="btn btn-secondary"
+                  href="https://github.com/BREINHZ/Project-FrontEnd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ver Backend
+                </a>
+
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+        <!-- FIN projects-track -->
+
+
+      </div>
+      <!-- FIN projects-track-wrapper -->
+
+
+
+      <!-- FLECHA SIGUIENTE -->
+
+      <button
+        class="carousel-btn carousel-next"
+        type="button"
+        aria-label="Proyecto siguiente"
+      >
+        ›
+      </button>
+
+
+    </div>
+    <!-- FIN projects-carousel -->
+
+
+
+    <!-- INDICADORES -->
+
+    <div class="carousel-dots">
+
+
+      <button
+        class="carousel-dot active"
+        type="button"
+        aria-label="Mostrar proyecto 1"
+      ></button>
+
+
+      <button
+        class="carousel-dot"
+        type="button"
+        aria-label="Mostrar proyecto 2"
+      ></button>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACTO
+===================================================== -->
+
+<section
+  id="contacto"
+  class="section section-alt"
+>
+
+  <div class="container narrow contact">
+
+
+    <p class="section-label">
+      Hablemos
+    </p>
+
+
+    <h2 class="section-title">
+      Contacto
+    </h2>
+
+
+    <p>
+
+      Estoy abierta a oportunidades donde pueda aportar
+      como Java Backend Developer o Full Stack Developer
+      y seguir fortaleciendo mi experiencia en soluciones
+      de software.
+
+    </p>
+
+
+
+    <div class="contact-actions">
+
+
+      <a
+        class="btn btn-primary"
+        href="mailto:dianistt890403@gmail.com"
+      >
+        Enviar correo
+      </a>
+
+
+      <a
+        class="btn btn-secondary"
+        href="https://github.com/BREINHZ"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+  <div class="container footer-content">
+
+
+    <p>
+      ©
+      <span id="year"></span>
+      Diana Tibisay Pacheco Moreno
+    </p>
+
+
+    <p>
+      Construido con HTML, CSS y JavaScript.
+    </p>
+
+
+  </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="script.js"></script>
+
+
 </body>
+
 </html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Portafolio profesional — Diana Tibisay Pacheco Moreno
 
 Portafolio estático preparado para publicarse gratuitamente con GitHub Pages.
@@ -69,3 +70,7 @@ y cambia imagen, descripción, tecnologías y enlaces.
 ## Recomendación
 
 No publiques archivos `.env`, credenciales, contraseñas, tokens o secretos en GitHub.
+=======
+# diana_pacheco_portafolio
+Portafolio con mis proyectos
+>>>>>>> 66333ecf407aec7f178668031287a4f2d98f68ae
