@@ -386,6 +386,7 @@ pre {
 /* ==============================
    PROJECTS - CAROUSEL
    ============================== */
+
 .projects-intro {
   max-width: 720px;
   color: var(--muted);
@@ -431,25 +432,9 @@ pre {
   box-shadow: var(--shadow);
 }
 
-.project-visual {
-  position: relative;
-  min-width: 0;
-  min-height: 480px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0b1422;
-  border-right: 1px solid var(--border);
-}
-
-.project-visual img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 480px;
-  object-fit: cover;
-}
+/* ==============================
+   PROJECT COMMON CONTENT
+   ============================== */
 
 .project-badge {
   position: absolute;
@@ -458,7 +443,7 @@ pre {
   z-index: 5;
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
-  background: rgba(8, 17, 31, 0.9);
+  background: rgba(8, 17, 31, 0.90);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: var(--text);
   font-size: 0.75rem;
@@ -559,7 +544,219 @@ pre {
   margin-top: 22px;
 }
 
-/* Flechas */
+/* ==============================
+   PROJECT 1 - SISTEMA DE NOTAS
+   ============================== */
+
+.project-notes .notes-visual,
+.project-notes > .project-visual {
+  position: relative;
+  min-width: 0;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b1422;
+  border-right: 1px solid var(--border);
+}
+
+.project-notes .notes-cover,
+.project-notes .project-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-notes .notes-info,
+.project-notes > .project-info {
+  min-width: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Compatibilidad mientras agregas la clase project-notes al HTML */
+.project-slide:not(.project-functional) > .project-visual:not(.functional-gallery) {
+  position: relative;
+  min-width: 0;
+  min-height: 480px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0b1422;
+  border-right: 1px solid var(--border);
+}
+
+.project-slide:not(.project-functional) .project-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ==============================
+   PROJECT 2 - FUNCTIONAL TRAINING
+   ============================== */
+
+.project-functional .functional-gallery,
+.functional-gallery {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 480px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 14px;
+  overflow: hidden;
+  background: #0b1422;
+  border-right: 1px solid var(--border);
+}
+
+.project-functional .functional-info,
+.project-functional > .project-info {
+  min-width: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-functional .gallery-main,
+.functional-gallery .gallery-main {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #08111f;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.project-functional .gallery-main #functionalMainImage,
+.functional-gallery .gallery-main #functionalMainImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 1;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-functional .gallery-main #functionalMainImage.gallery-changing,
+.functional-gallery .gallery-main #functionalMainImage.gallery-changing {
+  opacity: 0.3;
+  transform: scale(0.97);
+}
+
+.project-functional .gallery-thumbnails,
+.functional-gallery .gallery-thumbnails {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 2px 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) rgba(255, 255, 255, 0.05);
+}
+
+.project-functional .gallery-thumb,
+.functional-gallery .gallery-thumb {
+  flex: 0 0 62px;
+  width: 62px;
+  height: 70px;
+  min-width: 62px;
+  min-height: 70px;
+  max-width: 62px;
+  max-height: 70px;
+  padding: 3px;
+  display: block;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #111e31;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.62;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.project-functional .gallery-thumb img,
+.functional-gallery .gallery-thumb img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 7px;
+}
+
+.project-functional .gallery-thumb:hover,
+.functional-gallery .gallery-thumb:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  border-color: rgba(98, 166, 255, 0.6);
+}
+
+.project-functional .gallery-thumb.active,
+.functional-gallery .gallery-thumb.active {
+  opacity: 1;
+  border-color: var(--primary);
+  background: rgba(98, 166, 255, 0.10);
+  box-shadow: 0 0 0 2px rgba(98, 166, 255, 0.10);
+}
+
+.gallery-thumbnails::-webkit-scrollbar {
+  height: 5px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+}
+
+.gallery-thumbnails::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 20px;
+}
+
+/* ==============================
+   PROJECT CAROUSEL CONTROLS
+   ============================== */
+
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -578,7 +775,9 @@ pre {
   font-size: 2rem;
   cursor: pointer;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-  transition: 0.25s ease;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
 }
 
 .carousel-prev {
@@ -594,7 +793,6 @@ pre {
   transform: translateY(-50%) scale(1.06);
 }
 
-/* Indicadores */
 .carousel-dots {
   display: flex;
   align-items: center;
@@ -622,6 +820,7 @@ pre {
 /* ==============================
    CONTACT / FOOTER
    ============================== */
+
 .contact {
   text-align: center;
 }
@@ -652,10 +851,13 @@ footer {
 /* ==============================
    REVEAL ANIMATION
    ============================== */
+
 .reveal {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .reveal.visible {
@@ -666,6 +868,7 @@ footer {
 /* ==============================
    RESPONSIVE <= 900px
    ============================== */
+
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -687,18 +890,48 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .project-visual {
+  .project-notes .notes-visual,
+  .project-notes > .project-visual,
+  .project-slide:not(.project-functional) > .project-visual:not(.functional-gallery) {
     min-height: 350px;
     border-right: 0;
     border-bottom: 1px solid var(--border);
   }
 
-  .project-visual img {
+  .project-notes .notes-cover,
+  .project-notes .project-cover,
+  .project-slide:not(.project-functional) .project-cover {
     min-height: 350px;
     max-height: 400px;
   }
 
-  .project-info {
+  .project-functional .functional-gallery,
+  .functional-gallery {
+    min-height: auto;
+    padding: 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-functional .gallery-main,
+  .functional-gallery .gallery-main {
+    height: 350px;
+  }
+
+  .project-functional .gallery-thumb,
+  .functional-gallery .gallery-thumb {
+    flex: 0 0 60px;
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+    height: 66px;
+    min-height: 66px;
+    max-height: 66px;
+  }
+
+  .project-info,
+  .project-notes .notes-info,
+  .project-functional .functional-info {
     padding: 30px;
   }
 }
@@ -706,6 +939,7 @@ footer {
 /* ==============================
    RESPONSIVE <= 720px
    ============================== */
+
 @media (max-width: 720px) {
   .section {
     padding: 78px 0;
@@ -745,22 +979,16 @@ footer {
 /* ==============================
    RESPONSIVE <= 600px
    ============================== */
+
 @media (max-width: 600px) {
   .projects-intro {
     margin-top: -1.3rem;
     margin-bottom: 2rem;
   }
 
-  .project-visual {
-    min-height: 260px;
-  }
-
-  .project-visual img {
-    min-height: 260px;
-    max-height: 300px;
-  }
-
-  .project-info {
+  .project-info,
+  .project-notes .notes-info,
+  .project-functional .functional-info {
     padding: 22px;
   }
 
@@ -782,6 +1010,46 @@ footer {
 
   .project-architecture {
     justify-content: flex-start;
+  }
+
+  .project-notes .notes-visual,
+  .project-notes > .project-visual,
+  .project-slide:not(.project-functional) > .project-visual:not(.functional-gallery) {
+    min-height: 260px;
+  }
+
+  .project-notes .notes-cover,
+  .project-notes .project-cover,
+  .project-slide:not(.project-functional) .project-cover {
+    min-height: 260px;
+    max-height: 300px;
+  }
+
+  .project-functional .functional-gallery,
+  .functional-gallery {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .project-functional .gallery-main,
+  .functional-gallery .gallery-main {
+    height: 280px;
+  }
+
+  .project-functional .gallery-thumbnails,
+  .functional-gallery .gallery-thumbnails {
+    gap: 7px;
+  }
+
+  .project-functional .gallery-thumb,
+  .functional-gallery .gallery-thumb {
+    flex: 0 0 52px;
+    width: 52px;
+    min-width: 52px;
+    max-width: 52px;
+    height: 58px;
+    min-height: 58px;
+    max-height: 58px;
   }
 
   .carousel-btn {

@@ -8,18 +8,30 @@ const navLinks = document.querySelector(".nav-links");
 menuToggle?.addEventListener("click", () => {
   const isOpen = navLinks.classList.toggle("open");
 
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(isOpen)
+  );
 });
+
 
 /* Cerrar menú al seleccionar una opción */
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
+
   link.addEventListener("click", () => {
+
     navLinks.classList.remove("open");
 
-    menuToggle?.setAttribute("aria-expanded", "false");
+    menuToggle?.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
   });
+
 });
+
 
 /* ==============================
    AÑO AUTOMÁTICO DEL FOOTER
@@ -28,8 +40,10 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 const yearElement = document.getElementById("year");
 
 if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
+  yearElement.textContent =
+    new Date().getFullYear();
 }
+
 
 /* ==============================
    ANIMACIONES AL HACER SCROLL
@@ -42,8 +56,9 @@ const revealItems = document.querySelectorAll(
   .timeline-item,
   .project-slide,
   .contact
-  `,
+  `
 );
+
 
 /* Agregar clase inicial */
 
@@ -51,23 +66,35 @@ revealItems.forEach((item) => {
   item.classList.add("reveal");
 });
 
+
 /* Intersection Observer */
 
 const observer = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
 
-        observer.unobserve(entry.target);
+    entries.forEach((entry) => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add(
+          "visible"
+        );
+
+        observer.unobserve(
+          entry.target
+        );
+
       }
+
     });
+
   },
 
   {
-    threshold: 0.12,
-  },
+    threshold: 0.12
+  }
 );
+
 
 /* Observar elementos */
 
@@ -75,196 +102,653 @@ revealItems.forEach((item) => {
   observer.observe(item);
 });
 
+
 /* ==============================
-   CARRUSEL DE PROYECTOS
+   CARRUSEL PRINCIPAL DE PROYECTOS
    ============================== */
 
-const projectsTrack = document.querySelector(".projects-track");
+const projectsTrack =
+  document.querySelector(
+    ".projects-track"
+  );
 
-const projectSlides = document.querySelectorAll(".project-slide");
+const projectSlides =
+  document.querySelectorAll(
+    ".project-slide"
+  );
 
-const previousProjectButton = document.querySelector(".carousel-prev");
+const previousProjectButton =
+  document.querySelector(
+    ".carousel-prev"
+  );
 
-const nextProjectButton = document.querySelector(".carousel-next");
+const nextProjectButton =
+  document.querySelector(
+    ".carousel-next"
+  );
 
-const projectDots = document.querySelectorAll(".carousel-dot");
+const projectDots =
+  document.querySelectorAll(
+    ".carousel-dot"
+  );
 
 let currentProject = 0;
+
 
 /* ==============================
    ACTUALIZAR CARRUSEL
    ============================== */
 
 function updateProjectsCarousel() {
+
   if (!projectsTrack) {
     return;
   }
 
-  /* Mover carrusel */
 
-  projectsTrack.style.transform = `translateX(-${currentProject * 100}%)`;
+  projectsTrack.style.transform =
+    `translateX(-${currentProject * 100}%)`;
 
-  /* Actualizar indicadores */
 
-  projectDots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentProject);
-  });
+  projectDots.forEach(
+    (dot, index) => {
+
+      dot.classList.toggle(
+        "active",
+        index === currentProject
+      );
+
+    }
+  );
+
 }
+
 
 /* ==============================
    SIGUIENTE PROYECTO
    ============================== */
 
-nextProjectButton?.addEventListener("click", () => {
-  currentProject++;
+nextProjectButton?.addEventListener(
+  "click",
+  () => {
 
-  /* Volver al primer proyecto */
+    currentProject++;
 
-  if (currentProject >= projectSlides.length) {
-    currentProject = 0;
+
+    if (
+      currentProject >=
+      projectSlides.length
+    ) {
+
+      currentProject = 0;
+
+    }
+
+
+    updateProjectsCarousel();
+
   }
+);
 
-  updateProjectsCarousel();
-});
 
 /* ==============================
    PROYECTO ANTERIOR
    ============================== */
 
-previousProjectButton?.addEventListener("click", () => {
-  currentProject--;
+previousProjectButton?.addEventListener(
+  "click",
+  () => {
 
-  /* Ir al último proyecto */
+    currentProject--;
 
-  if (currentProject < 0) {
-    currentProject = projectSlides.length - 1;
+
+    if (currentProject < 0) {
+
+      currentProject =
+        projectSlides.length - 1;
+
+    }
+
+
+    updateProjectsCarousel();
+
   }
+);
 
-  updateProjectsCarousel();
-});
 
 /* ==============================
    NAVEGACIÓN CON LOS PUNTOS
    ============================== */
 
-projectDots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentProject = index;
+projectDots.forEach(
+  (dot, index) => {
 
-    updateProjectsCarousel();
-  });
-});
+    dot.addEventListener(
+      "click",
+      () => {
+
+        currentProject = index;
+
+        updateProjectsCarousel();
+
+      }
+    );
+
+  }
+);
+
 
 /* ==============================
    NAVEGACIÓN CON TECLADO
    ============================== */
 
-document.addEventListener("keydown", (event) => {
-  /* Evitar comportamiento si no existe carrusel */
+document.addEventListener(
+  "keydown",
+  (event) => {
 
-  if (projectSlides.length === 0) {
-    return;
-  }
-
-  /* Flecha derecha */
-
-  if (event.key === "ArrowRight") {
-    currentProject++;
-
-    if (currentProject >= projectSlides.length) {
-      currentProject = 0;
+    if (
+      projectSlides.length === 0
+    ) {
+      return;
     }
 
-    updateProjectsCarousel();
-  }
 
-  /* Flecha izquierda */
+    /*
+     * Si el usuario está usando una
+     * miniatura de Functional Training,
+     * no cambiamos de proyecto.
+     */
 
-  if (event.key === "ArrowLeft") {
-    currentProject--;
-
-    if (currentProject < 0) {
-      currentProject = projectSlides.length - 1;
+    if (
+      document.activeElement?.classList
+        .contains("gallery-thumb")
+    ) {
+      return;
     }
 
-    updateProjectsCarousel();
+
+    /* Flecha derecha */
+
+    if (
+      event.key === "ArrowRight"
+    ) {
+
+      currentProject++;
+
+
+      if (
+        currentProject >=
+        projectSlides.length
+      ) {
+
+        currentProject = 0;
+
+      }
+
+
+      updateProjectsCarousel();
+
+    }
+
+
+    /* Flecha izquierda */
+
+    if (
+      event.key === "ArrowLeft"
+    ) {
+
+      currentProject--;
+
+
+      if (currentProject < 0) {
+
+        currentProject =
+          projectSlides.length - 1;
+
+      }
+
+
+      updateProjectsCarousel();
+
+    }
+
   }
-});
+);
+
 
 /* ==============================
-   SOPORTE PARA SWIPE EN CELULAR
+   SWIPE DEL CARRUSEL PRINCIPAL
    ============================== */
 
 let touchStartX = 0;
 
 let touchEndX = 0;
 
-const projectsCarousel = document.querySelector(".projects-carousel");
+let touchStartedInsideGallery = false;
+
+const projectsCarousel =
+  document.querySelector(
+    ".projects-carousel"
+  );
+
 
 projectsCarousel?.addEventListener(
   "touchstart",
   (event) => {
-    touchStartX = event.changedTouches[0].screenX;
+
+    touchStartX =
+      event.changedTouches[0].screenX;
+
+
+    /*
+     * Comprobar si el usuario empezó
+     * el gesto dentro de la galería.
+     */
+
+    touchStartedInsideGallery =
+      Boolean(
+        event.target.closest(
+          ".functional-gallery"
+        )
+      );
+
   },
 
   {
-    passive: true,
-  },
+    passive: true
+  }
 );
+
 
 projectsCarousel?.addEventListener(
   "touchend",
   (event) => {
-    touchEndX = event.changedTouches[0].screenX;
+
+    touchEndX =
+      event.changedTouches[0].screenX;
+
+
+    /*
+     * Si el gesto empezó dentro de
+     * la galería, no mover el
+     * carrusel principal.
+     */
+
+    if (
+      touchStartedInsideGallery
+    ) {
+
+      touchStartedInsideGallery =
+        false;
+
+      return;
+
+    }
+
 
     handleProjectSwipe();
+
   },
 
   {
-    passive: true,
-  },
+    passive: true
+  }
 );
+
 
 /* ==============================
    PROCESAR SWIPE
    ============================== */
 
 function handleProjectSwipe() {
-  const swipeDistance = touchStartX - touchEndX;
 
-  /* Distancia mínima para considerar swipe */
+  const swipeDistance =
+    touchStartX - touchEndX;
 
-  const minimumSwipeDistance = 50;
 
-  /* Swipe hacia izquierda */
+  const minimumSwipeDistance =
+    50;
 
-  if (swipeDistance > minimumSwipeDistance) {
+
+  /* Swipe izquierda */
+
+  if (
+    swipeDistance >
+    minimumSwipeDistance
+  ) {
+
     currentProject++;
 
-    if (currentProject >= projectSlides.length) {
+
+    if (
+      currentProject >=
+      projectSlides.length
+    ) {
+
       currentProject = 0;
+
     }
 
+
     updateProjectsCarousel();
+
   }
 
-  /* Swipe hacia derecha */
 
-  if (swipeDistance < -minimumSwipeDistance) {
+  /* Swipe derecha */
+
+  if (
+    swipeDistance <
+    -minimumSwipeDistance
+  ) {
+
     currentProject--;
 
+
     if (currentProject < 0) {
-      currentProject = projectSlides.length - 1;
+
+      currentProject =
+        projectSlides.length - 1;
+
     }
 
+
     updateProjectsCarousel();
+
   }
+
 }
+
 
 /* ==============================
    INICIALIZAR CARRUSEL
    ============================== */
 
-if (projectSlides.length > 0) {
+if (
+  projectSlides.length > 0
+) {
+
   updateProjectsCarousel();
+
 }
+
+
+/* =====================================================
+   GALERÍA DE MINIATURAS
+   FUNCTIONAL TRAINING
+   ===================================================== */
+
+const functionalMainImage =
+  document.getElementById(
+    "functionalMainImage"
+  );
+
+const functionalThumbnails =
+  document.querySelectorAll(
+    ".functional-gallery .gallery-thumb"
+  );
+
+
+/* ==============================
+   CAMBIAR IMAGEN PRINCIPAL
+   ============================== */
+
+function changeFunctionalImage(
+  thumbnail
+) {
+
+  if (!functionalMainImage) {
+    return;
+  }
+
+
+  const newImage =
+    thumbnail.dataset.image;
+
+  const newAlt =
+    thumbnail.dataset.alt;
+
+
+  /*
+   * Si ya está activa,
+   * no hacemos nada.
+   */
+
+  if (
+    thumbnail.classList.contains(
+      "active"
+    )
+  ) {
+    return;
+  }
+
+
+  /*
+   * Comprobar que exista
+   * una imagen configurada.
+   */
+
+  if (!newImage) {
+    return;
+  }
+
+
+  /*
+   * Animación de salida
+   */
+
+  functionalMainImage.classList.add(
+    "gallery-changing"
+  );
+
+
+  setTimeout(() => {
+
+    /*
+     * Cambiar imagen
+     */
+
+    functionalMainImage.src =
+      newImage;
+
+
+    /*
+     * Cambiar texto alternativo
+     */
+
+    functionalMainImage.alt =
+      newAlt ||
+      "Captura de Functional Training";
+
+
+    /*
+     * Quitar animación
+     */
+
+    functionalMainImage.classList.remove(
+      "gallery-changing"
+    );
+
+  }, 150);
+
+
+  /*
+   * Eliminar estado activo
+   * de todas las miniaturas.
+   */
+
+  functionalThumbnails.forEach(
+    (item) => {
+
+      item.classList.remove(
+        "active"
+      );
+
+      item.setAttribute(
+        "aria-pressed",
+        "false"
+      );
+
+    }
+  );
+
+
+  /*
+   * Activar miniatura seleccionada.
+   */
+
+  thumbnail.classList.add(
+    "active"
+  );
+
+  thumbnail.setAttribute(
+    "aria-pressed",
+    "true"
+  );
+
+}
+
+
+/* ==============================
+   EVENTOS DE MINIATURAS
+   ============================== */
+
+functionalThumbnails.forEach(
+  (thumbnail) => {
+
+    thumbnail.addEventListener(
+      "click",
+      (event) => {
+
+        /*
+         * Evita que cualquier evento
+         * pueda afectar al carrusel
+         * principal.
+         */
+
+        event.stopPropagation();
+
+
+        changeFunctionalImage(
+          thumbnail
+        );
+
+      }
+    );
+
+  }
+);
+
+
+/* ==============================
+   NAVEGACIÓN DE MINIATURAS
+   CON TECLADO
+   ============================== */
+
+functionalThumbnails.forEach(
+  (thumbnail, index) => {
+
+    thumbnail.addEventListener(
+      "keydown",
+      (event) => {
+
+        let nextIndex = index;
+
+
+        /*
+         * Flecha derecha
+         */
+
+        if (
+          event.key === "ArrowRight"
+        ) {
+
+          event.preventDefault();
+
+          nextIndex =
+            index + 1;
+
+
+          if (
+            nextIndex >=
+            functionalThumbnails.length
+          ) {
+
+            nextIndex = 0;
+
+          }
+
+        }
+
+
+        /*
+         * Flecha izquierda
+         */
+
+        else if (
+          event.key === "ArrowLeft"
+        ) {
+
+          event.preventDefault();
+
+          nextIndex =
+            index - 1;
+
+
+          if (
+            nextIndex < 0
+          ) {
+
+            nextIndex =
+              functionalThumbnails.length - 1;
+
+          }
+
+        }
+
+
+        /*
+         * Si cambió de posición.
+         */
+
+        if (
+          nextIndex !== index
+        ) {
+
+          const nextThumbnail =
+            functionalThumbnails[
+              nextIndex
+            ];
+
+
+          nextThumbnail.focus();
+
+          changeFunctionalImage(
+            nextThumbnail
+          );
+
+        }
+
+      }
+    );
+
+  }
+);
+
+
+/* ==============================
+   ESTADO INICIAL DE LA GALERÍA
+   ============================== */
+
+functionalThumbnails.forEach(
+  (thumbnail, index) => {
+
+    thumbnail.setAttribute(
+      "aria-pressed",
+      index === 0
+        ? "true"
+        : "false"
+    );
+
+  }
+);
