@@ -543,63 +543,69 @@ pre {
   gap: 12px;
   margin-top: 22px;
 }
-
 /* ==============================
-   PROJECT 1 - SISTEMA DE NOTAS
+   PROYECTO 1 - SISTEMA DE NOTAS
    ============================== */
+
+/* CONTENEDOR DE LA IMAGEN */
 
 .project-notes .notes-visual,
 .project-notes > .project-visual {
   position: relative;
+
   min-width: 0;
-  min-height: 480px;
+  height: 560px;
+  min-height: 0;
+
   overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 20px;
+
   background: #0b1422;
+
   border-right: 1px solid var(--border);
 }
+
+
+/* IMAGEN DEL PROYECTO */
 
 .project-notes .notes-cover,
 .project-notes .project-cover {
   display: block;
+
   width: 100%;
   height: 100%;
-  min-height: 480px;
-  object-fit: cover;
+
+  min-width: 0;
+  min-height: 0;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
   object-position: center;
+
+  border-radius: 14px;
+
+  background: #ffffff;
 }
+
+
+/* INFORMACIÓN DEL PROYECTO */
 
 .project-notes .notes-info,
 .project-notes > .project-info {
   min-width: 0;
+
   padding: 40px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-/* Compatibilidad mientras agregas la clase project-notes al HTML */
-.project-slide:not(.project-functional) > .project-visual:not(.functional-gallery) {
-  position: relative;
-  min-width: 0;
-  min-height: 480px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0b1422;
-  border-right: 1px solid var(--border);
-}
-
-.project-slide:not(.project-functional) .project-cover {
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 480px;
-  object-fit: cover;
-  object-position: center;
 }
 
 /* ==============================
@@ -891,18 +897,21 @@ footer {
   }
 
   .project-notes .notes-visual,
-  .project-notes > .project-visual,
-  .project-slide:not(.project-functional) > .project-visual:not(.functional-gallery) {
-    min-height: 350px;
+  .project-notes > .project-visual {
+    height: 400px;
+    min-height: 0;
+    padding: 15px;
     border-right: 0;
     border-bottom: 1px solid var(--border);
   }
 
   .project-notes .notes-cover,
-  .project-notes .project-cover,
-  .project-slide:not(.project-functional) .project-cover {
-    min-height: 350px;
-    max-height: 400px;
+  .project-notes .project-cover {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    object-fit: contain;
   }
 
   .project-functional .functional-gallery,
@@ -1013,16 +1022,19 @@ footer {
   }
 
   .project-notes .notes-visual,
-  .project-notes > .project-visual,
-  .project-slide:not(.project-functional) > .project-visual:not(.functional-gallery) {
-    min-height: 260px;
+  .project-notes > .project-visual {
+    height: 300px;
+    min-height: 0;
+    padding: 10px;
   }
 
   .project-notes .notes-cover,
-  .project-notes .project-cover,
-  .project-slide:not(.project-functional) .project-cover {
-    min-height: 260px;
-    max-height: 300px;
+  .project-notes .project-cover {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-height: 100%;
+    object-fit: contain;
   }
 
   .project-functional .functional-gallery,
